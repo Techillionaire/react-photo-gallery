@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import Gallery from './components/Gallery';
+
+
+const App = () => {
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+        <>
+          <h1 style={{ textAlign: 'center', margin: '30px'}}>Image Gallery</h1>
+            <p style={{ textAlign: 'center', margin: '30px', color: "grey", fontSize: "20px"}}>The internet’s source of freely-usable images.
+                Powered by creators everywhere.
+            </p>
+          <Gallery />
+        </>
+
+  )
+        
+};
 
 export default App;

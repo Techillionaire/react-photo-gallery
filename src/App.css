@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+.gallery{
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-width: 33%;
+  -moz-column-width: 33%;
+  column-width: 33%;
+  padding: 0 200px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pics{
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease;
+  cursor: pointer;
+  margin-bottom: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.gallery .pics:hover{
+  filter: opacity(.8);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.model{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background: #000;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  overflow: hidden;
+  z-index: 999;
+  transition: opacity .4s ease, visibility .4s ease, transform .5s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.open{
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.model img{
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  display: block;
+  line-height: 0;
+  box-sizing: border-box;
+  padding: 20px 0 20px;
+  margin: 0 auto;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
+
+.fas {
+  position: fixed;
+  top: 5px;
+  right: 20px;
+  width: 2rem;
+  height: 2rem;
+  padding: 5px;
+  background-color: rgba(0,0,0,0.4);
+  color: rgb(116, 116, 116);
+  cursor: pointer;
+  font-size: 40px;
+  font-weight: lighter;
+}
+
+@media (max-width: 991px){
+  .gallery{
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    padding: 10px 30px;
+  }
+
+}
+
+@media (max-width: 480px){
+  .gallery{
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-width: 100%;
+    -moz-column-width: 100%;
+    column-width: 100%;
+  }
+
+}
+
