@@ -6,6 +6,7 @@ import Spinner from './Spinner';
 const Gallery = () => {
 
   const [imgSrc, setImgSrc] = useState([])
+  const [ error, setError ] = useState(null);
 
   useEffect(() => {
     const url = "https://api.unsplash.com";
@@ -15,9 +16,15 @@ const Gallery = () => {
       .then(res => 
       setImgSrc([...imgSrc, ...res.data]),
       setLoading(false))
+      .catch(err => {
+        setLoading(false);
+        setError(err.message);
+      })
 
     }, 1500)
   },[])
+
+  
 
 
     
@@ -41,7 +48,7 @@ const Gallery = () => {
           <img src={tempImgSrc} alt="tempImg" />
           <i class="fas fa-times" onClick={() => setModel(false)}/>
         </div>
-
+        {error && <div className="error">ERROR!!!!!! could not fetch Images</div>}
         { loading && <Spinner /> }
         
         <div className="gallery">

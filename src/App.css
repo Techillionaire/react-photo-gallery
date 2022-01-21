@@ -37,6 +37,13 @@
   transition: opacity .4s ease, visibility .4s ease, transform .5s ease-in-out;
 }
 
+.error{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: lightsalmon;
+}
+
 .open{
   visibility: visible;
   opacity: 1;
