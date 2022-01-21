@@ -11,13 +11,13 @@ const Gallery = () => {
     const url = "https://api.unsplash.com";
 
     setTimeout(() => {
-      axios.get(`${url}/photos/random?client_id=E3iqD4knQXz3seiitgeVCrsnAS24tsJjrx4LDJBnx3w&count=50`)
+      axios.get(`${url}/photos/random?client_id=E3iqD4knQXz3seiitgeVCrsnAS24tsJjrx4LDJBnx3w&count=100`)
       .then(res => 
       setImgSrc([...imgSrc, ...res.data]),
       setLoading(false))
 
     }, 1500)
-  }, [])
+  },[])
 
 
     
@@ -42,10 +42,10 @@ const Gallery = () => {
           <i class="fas fa-times" onClick={() => setModel(false)}/>
         </div>
 
-        
+        { loading && <Spinner /> }
         
         <div className="gallery">
-            { loading && <Spinner /> }
+            
             {imgSrc.map(image => {
                 return (
                     <div className="pics" >

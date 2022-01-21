@@ -9,7 +9,7 @@ const App = () => {
   return (
         <>
           <h1 style={{ textAlign: 'center', margin: '30px'}}>Image Gallery</h1>
-            <p style={{ textAlign: 'center', margin: '30px', color: "grey", fontSize: "20px"}}>The internet’s source of freely-usable images.
+            <p style={{ textAlign: 'center', margin: '30px', color: "grey", fontSize: "23px"}}>The internet’s source of freely-usable images.
                 Powered by creators everywhere.
             </p>
           <Gallery />
