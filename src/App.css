@@ -37,6 +37,10 @@
   transition: opacity .4s ease, visibility .4s ease, transform .5s ease-in-out;
 }
 
+/* .spin{
+  font-size: 60px;
+} */
+
 .error{
   text-align: center;
   font-size: 30px;
